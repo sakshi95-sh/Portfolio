@@ -1,7 +1,5 @@
 # Sakshi Sharma Portfolio
 
-This is a standard Next.js project. It has no OpenAI, Sites, Cloudflare, database, worker, authentication, or deployment-specific dependencies.
-
 ## Run locally
 
 1. Install Node.js 20.9 or newer.
