@@ -908,6 +908,18 @@ body {
   background-color: #d8bfaa;
   color: #01080f;
 }
+.companyname {
+  color: var(--plum);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+}
+.timelineCopy {
+  color: var(--plum);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: medium;
+}
 .hero h1 em,
 .about h2 em,
 .skills h2 em,
@@ -1604,6 +1616,7 @@ body {
 }
 .impactPanel li {
   color: #e6e2d9;
+  font-size: medium;
 }
 .study {
   background: var(--blue);
@@ -2027,6 +2040,7 @@ body {
 }
 .years {
   color: #85516d;
+  font-size: 15px;
 }
 .impactDetails summary {
   color: #70405e;

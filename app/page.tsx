@@ -14,15 +14,21 @@ const softSkills = ["Technical leadership", "Product thinking", "Clear communica
 const experience = [
   {
     years: "2022 TO NOW",
-    role: "Senior Technical Lead",
+    role: "Senior Technical Lead — Full-Stack Software Engineer",
     company: "Meta · via HCLTech",
-    copy: "Owns business-critical API deployment and partner integration at Meta across MuleSoft, REST APIs, AS2 connectivity, and EDI workflows for 100+ global retail partners.",
-    impact: ["Deploy and support REST APIs on Meta's MuleSoft integration platform, owning configuration, testing, release coordination, monitoring, and production troubleshooting.", "Configure AS2 partner connectivity end to end, including certificates, endpoints, encryption, signatures, acknowledgements, and production validation.", "Onboarded 100+ enterprise partners, including Walmart, Best Buy, Target, and Arvato, across business-critical supply chain workflows.", "Built SQL monitoring dashboards and n8n automations that surface failures early and reduced manual onboarding and reconciliation work by 60%.", "Built a Claude-powered OCR agent to extract and process purchase-order data, reducing manual processing effort by approximately 80% while retaining human review for exceptions."],
+    copy: "Design, build, and maintain REST APIs and backend automation on Meta's integration platform — writing the code, debugging distributed systems, and shipping the tooling that keeps 100+ global partner workflows running reliably.",
+    impact: [
+      "Build and debug REST APIs and AS2 connectivity — configuring endpoints, encryption, certificates, and production validation end to end.",
+      "Built a Claude-powered OCR agent from scratch to extract and process purchase-order data, reducing manual processing effort by approximately 80%.",
+      "Write SQL monitoring dashboards and n8n automation scripts that catch failures early, cutting manual reconciliation work by 60%.",
+      "Debug distributed API failures, data mismatches, and workflow errors using JavaScript, SQL, and REST tooling — root-causing issues rather than just patching symptoms.",
+      "Supported onboarding for 100+ enterprise partners, including Walmart, Best Buy, Target, and Arvato, on business-critical supply chain integrations.",
+    ],
   },
 
   {
     years: "2017 TO 2021",
-    role: "Associate Software Developer",
+    role: "Software Developer",
     company: "Bebo Technologies",
     copy: "Engineered backend modules, stored procedures, and API integrations; helped reduce recurring production defects by 30% and delivered 20+ releases across the full software lifecycle.",
     impact: ["Developed backend modules, stored procedures, and API integrations for enterprise web applications.", "Led root-cause analysis that reduced recurring production defects by 30%, improving reliability and supportability.", "Delivered 20+ releases across design, coding, testing, deployment, and post-release monitoring in Agile teams."],
@@ -80,8 +86,8 @@ export default function Home() {
         </button>
         <div className={`navLinks ${menuOpen ? "open" : ""}`}>
           <a href="#about" onClick={closeMenu}>About Me</a>
-          <a href="#experience" onClick={closeMenu}>Experience</a>
-          <a href="#study" onClick={closeMenu}>Eduction</a>
+          <a href="#experience" onClick={closeMenu}>Experienence</a>
+          <a href="#study" onClick={closeMenu}>Education</a>
           <a href="#work" onClick={closeMenu}>Experienence</a>
           <a href="#project" onClick={closeMenu}>Projects</a>
           <a href="https://docs.google.com/document/d/122cpUuROkknl93t82Uxvu9HyUFjnqjvA/export?format=pdf">Resume ↓</a>
@@ -131,7 +137,7 @@ export default function Home() {
           </div>
           <div className="aboutCopy reveal">
             <p className="lead">I&apos;m a New York based engineer, curious product builder, and lifelong learner who likes making complicated things feel simple.</p>
-            <p className="aboutdetails">My background spans full-stack development,API design, database design, and applied AI from React and Node.js to Claude and RAG pipelines. . I care about clarity, ownership, and code that still works when real users touch it. I enjoy the craft of engineering, especially when clean architecture meets a product people actually want to use. AI gives me a space to turn curiosity into useful products and learn by shipping.
+            <p className="aboutdetails">My background spans full-stack development, API design, database design, and applied AI from React and Node.js to Claude and RAG pipelines. I care about clarity, ownership, and code that still works when real users touch it. I enjoy the craft of engineering, especially when clean architecture meets a product people actually want to use. AI gives me a space to turn curiosity into useful products and learn by shipping.
             </p>
             <p>Outside work, I&apos;m often exploring a trail, experimenting with an independent AI project, discovering a new corner of New York, or spending time with my dog.
           </p>
@@ -158,8 +164,8 @@ export default function Home() {
         <div className="timeline">
           {experience.map((item) => <article className="timelineRow reveal" key={item.role}>
             <div className="years">{item.years}</div>
-            <div className="role"><h3>{item.role}</h3><p>{item.company}</p></div>
-            <p className="timelineCopy">{item.copy}</p>
+            <div className="role"><h3>{item.role}</h3><h4 className="companyname">{item.company}</h4></div>
+            <p  className="timelineCopy">{item.copy}</p>
             <details className="impactDetails">
               <summary aria-label={`View full impact for ${item.role}`}><span>View full impact</span><b>+</b></summary>
               <div className="impactPanel"><p>Selected SWE impact</p><ul>{item.impact.map((impact) => <li key={impact}>{impact}</li>)}</ul></div>
