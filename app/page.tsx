@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 
 const skills = [
   ["01", "Frontend", "React · Next.js · TypeScript · JavaScript · HTML · CSS"],
-  ["02", "Backend", "Node.js · Express · REST APIs · PostgreSQL · Prisma"],
+  ["02", "Backend", "Node.js · Express · REST APIs · PostgreSQL · Prisma · MongoDB"],
   ["03", "AI systems", "OpenAI · Claude APIs · RAG · Claude Skills, Agents & Workflows · Prompt Engineering · Whisper · OCR"],
   ["04", "Cloud & delivery", "AWS S3 / IAM · Git · GitHub Copilot · Jenkins · Postman · Linux · Render · CI/CD"],
-  ["05", "Frameworks & automation", "NestJS · n8n Workflow Automation · MuleSoft · Docker · Agile / Scrum"],
 ];
 
 const softSkills = ["Technical leadership", "Product thinking", "Clear communication", "Cross-functional collaboration", "Root-cause analysis", "Ownership under pressure"];
@@ -18,8 +17,9 @@ const experience = [
     role: "Senior Technical Lead",
     company: "Meta · via HCLTech",
     copy: "Owns business-critical API deployment and partner integration at Meta across MuleSoft, REST APIs, AS2 connectivity, and EDI workflows for 100+ global retail partners.",
-    impact: ["Deploy and support REST APIs on Meta's MuleSoft integration platform, owning configuration, testing, release coordination, monitoring, and production troubleshooting.", "Configure AS2 partner connectivity end to end, including certificates, endpoints, encryption, signatures, acknowledgements, and production validation.", "Onboarded 100+ enterprise partners, including Walmart, Best Buy, Target, and Arvato, across business-critical supply chain workflows.", "Built SQL monitoring dashboards and n8n automations that surface failures early and reduced manual onboarding and reconciliation work by 60%.", "Resolve distributed API failures, data mismatches, duplicate records, and workflow delays using JavaScript, SQL, logs, REST debugging, and MuleSoft tooling."],
+    impact: ["Deploy and support REST APIs on Meta's MuleSoft integration platform, owning configuration, testing, release coordination, monitoring, and production troubleshooting.", "Configure AS2 partner connectivity end to end, including certificates, endpoints, encryption, signatures, acknowledgements, and production validation.", "Onboarded 100+ enterprise partners, including Walmart, Best Buy, Target, and Arvato, across business-critical supply chain workflows.", "Built SQL monitoring dashboards and n8n automations that surface failures early and reduced manual onboarding and reconciliation work by 60%.", "Built a Claude-powered OCR agent to extract and process purchase-order data, reducing manual processing effort by approximately 80% while retaining human review for exceptions."],
   },
+
   {
     years: "2017 TO 2021",
     role: "Associate Software Developer",
@@ -75,41 +75,66 @@ export default function Home() {
   return (
     <main>
       <nav className="nav" aria-label="Primary navigation">
-        <a className="logo" href="#top" aria-label="Sakshi Sharma, home">S<span>///</span></a>
         <button className="menuButton" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Toggle menu">
           {menuOpen ? "Close" : "Menu"}
         </button>
         <div className={`navLinks ${menuOpen ? "open" : ""}`}>
-          <a href="#about" onClick={closeMenu}>About</a>
+          <a href="#about" onClick={closeMenu}>About Me</a>
           <a href="#experience" onClick={closeMenu}>Experience</a>
-          <a href="#study" onClick={closeMenu}>Study</a>
-          <a href="#work" onClick={closeMenu}>Work</a>
-          <a href="https://docs.google.com/document/d/122cpUuROkknl93t82Uxvu9HyUFjnqjvA/export?format=pdf">Résumé ↓</a>
+          <a href="#study" onClick={closeMenu}>Eduction</a>
+          <a href="#work" onClick={closeMenu}>Experienence</a>
+          <a href="#project" onClick={closeMenu}>Projects</a>
+          <a href="https://docs.google.com/document/d/122cpUuROkknl93t82Uxvu9HyUFjnqjvA/export?format=pdf">Resume ↓</a>
           <a className="navCta" href="#contact" onClick={closeMenu}>Let&apos;s talk <span>↗</span></a>
         </div>
+        
       </nav>
 
       <section className="hero" id="top">
         <div className="heroGlow" aria-hidden="true" />
         <div className="heroOrb orbOne" aria-hidden="true" />
         <div className="heroOrb orbTwo" aria-hidden="true" />
-        <p className="eyebrow heroEyebrow">FULL-STACK ENGINEER · NEW YORK</p>
-        <h1><span>I build systems</span><span>that <em>think</em> and</span><span>products that <b>feel.</b></span></h1>
+        
+        {/* <h1><b>Hey, I'm Sakshi Sharma</b></h1>
+        <h2><b>Sakshi Sharma</b></h2> */}
+        <h1><em>Sakshi </em> <b>Sharma</b>
+        </h1>
+        <h2>Full-Stack Software Engineer building reliable, AI-powered products.</h2>
         <div className="heroBottom">
-          <p>Sakshi Sharma blends enterprise-scale engineering with modern AI product craft, turning complex infrastructure into elegant, human experiences.</p>
-          <div className="heroActions"><a className="resumeButton" href="https://docs.google.com/document/d/122cpUuROkknl93t82Uxvu9HyUFjnqjvA/export?format=pdf"><span>Download résumé</span><b>↓</b></a><a className="roundLink" href="#work" aria-label="View projects"><span>View projects</span><b>↓</b></a></div>
+            <span className="availability"><i /> Open to Software Engineer & Full-Stack opportunities.</span>
         </div>
-        <div className="availability"><i /> Available for full-stack opportunities</div>
+
+        
+       
       </section>
 
       <section className="about section" id="about">
-        <div className="sectionLabel reveal"><span>01</span> ABOUT</div>
+        {/* <div className="heroGlow" aria-hidden="true" />
+        <div className="heroOrb orbOne" aria-hidden="true" />
+        <div className="heroOrb orbTwo" aria-hidden="true" /> */}
+        <div className="sectionLabel reveal" id="aboutsection"><span>01</span></div>
         <div className="aboutGrid">
-          <div className="aboutIntro reveal"><h2>More than<br/>the code.</h2><p className="aboutStatement">Engineering is how I turn curiosity into something useful.</p><div className="aboutImagePair"><figure><img src="/sakshi-hiking.jpg" alt="Sakshi exploring a hiking trail"/></figure><figure><img src="/sakshi-with-dog.jpg" alt="Sakshi relaxing with her dog"/></figure></div></div>
+          <div className="aboutIntro reveal">
+            <h2></h2><p className="aboutStatement">
+              Building software, systems, and AI to ship products that actually work.
+              </p>
+            <p>
+              Engineering is how I turn curiosity into something useful.</p>
+            <div className="aboutImagePair ">
+              <figure className="photo-hiking photo-hanging">
+                <img src="/sakshi-hiking.jpg" alt="Sakshi exploring a hiking trail" />
+              </figure>
+              <figure className="photo-hanging">
+                <img src="/sakshi-with-dog.jpg" alt="Sakshi relaxing with her dog" />
+              </figure>
+            </div>
+          </div>
           <div className="aboutCopy reveal">
-            <p className="lead">Hi, I&apos;m Sakshi. I&apos;m a New York based engineer, curious product builder, and lifelong learner who likes making complicated things feel simple.</p>
-            <p>My work spans enterprise integrations, full-stack products, and applied AI. What connects it all is how I think: understand the real problem, make the system reliable, and shape an experience that feels natural to the person using it.</p>
-            <p>Outside work, I&apos;m often exploring a trail, experimenting with an independent AI project, discovering a new corner of New York, or spending time with my dog. Building Clarix AI and JobQuest AI gives me a space to turn curiosity into useful products and learn by shipping.</p>
+            <p className="lead">I&apos;m a New York based engineer, curious product builder, and lifelong learner who likes making complicated things feel simple.</p>
+            <p className="aboutdetails">My background spans full-stack development,API design, database design, and applied AI from React and Node.js to Claude and RAG pipelines. . I care about clarity, ownership, and code that still works when real users touch it. I enjoy the craft of engineering, especially when clean architecture meets a product people actually want to use. AI gives me a space to turn curiosity into useful products and learn by shipping.
+            </p>
+            <p>Outside work, I&apos;m often exploring a trail, experimenting with an independent AI project, discovering a new corner of New York, or spending time with my dog.
+          </p>
             <a className="inlineLink" href="https://www.linkedin.com/in/imsakshish/" target="_blank" rel="noreferrer">Meet me on LinkedIn <span>↗</span></a>
           </div>
         </div>
@@ -117,9 +142,12 @@ export default function Home() {
 
       <section className="skills section" id="skills">
         <div className="sectionLabel reveal"><span>02</span> SKILLS</div>
-        <div className="skillsHead reveal"><h2>Built to ship.<br/><em>Easy to work with.</em></h2><p>Technical depth matters. So do judgment, communication, ownership, and the ability to move a team toward the right outcome.</p></div>
+        <div className="skillsHead reveal"><h2>Built to ship.<br/><em>Easy to work with.</em></h2><p className="technicalsub">Technical depth matters. So do judgment, communication, ownership, and the ability to move a team toward the right outcome.</p></div>
         <div className="skillsSplit">
-          <div className="hardSkills reveal"><div className="skillsColumnHead"><span>01</span><h3>Hard skills</h3><p>What I build with</p></div>{skills.map(([, title, text]) => <article key={title}><h4>{title}</h4><p>{text}</p></article>)}</div>
+          <div className="hardSkills reveal"><div className="skillsColumnHead"><span>01</span><h3>Hard skills</h3><p>What I build with</p>
+          </div>{skills.map(([, title, text]) => <article key={title}><h4>{title}</h4><p>{text}</p></article>)}
+          <blockquote>Always learning the next tool.</blockquote>
+          </div>
           <div className="softSkills reveal"><div className="skillsColumnHead"><span>02</span><h3>Soft skills</h3><p>How I show up</p></div><div className="softSkillCloud">{softSkills.map((skill, index) => <span style={{"--i": index} as React.CSSProperties} key={skill}>{skill}</span>)}</div><blockquote>Calm in production. Curious in discovery. Clear with people.</blockquote></div>
         </div>
       </section>
