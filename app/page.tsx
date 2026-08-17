@@ -86,9 +86,8 @@ export default function Home() {
         </button>
         <div className={`navLinks ${menuOpen ? "open" : ""}`}>
           <a href="#about" onClick={closeMenu}>About Me</a>
-          <a href="#experience" onClick={closeMenu}>Experienence</a>
+          <a href="#experience" onClick={closeMenu}> Experience</a>
           <a href="#study" onClick={closeMenu}>Education</a>
-          <a href="#work" onClick={closeMenu}>Experienence</a>
           <a href="#project" onClick={closeMenu}>Projects</a>
           <a href="https://docs.google.com/document/d/122cpUuROkknl93t82Uxvu9HyUFjnqjvA/export?format=pdf">Resume ↓</a>
           <a className="navCta" href="#contact" onClick={closeMenu}>Let&apos;s talk <span>↗</span></a>
